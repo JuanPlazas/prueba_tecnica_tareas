@@ -13,7 +13,11 @@ export default function Layout({ Component, pageProps }) {
         <h1 className="text-4xl font-bold">
           Sistema de gestion de Tareas
         </h1>
-          <Component {...pageProps} Seccion={session} />
+        {
+          session ?
+          <Component {...pageProps} Seccion={session} /> :
+          <Login Seccion={session} />
+        }
         <Toaster />
       </div>
     </div>
